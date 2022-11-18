@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create accounts table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: number(16,2)
+                  autoIncrement: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: bigint
+
+            remarks: Table to store accounts information
+            schemaName: public

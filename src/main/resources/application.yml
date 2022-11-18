@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5434/postgres #db_name
+    username: postgres # username
+    password: postgres # user password
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: false
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
